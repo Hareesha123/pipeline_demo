@@ -9,9 +9,19 @@ pipeline{
     }
     
     stage("Build stage"){
-      steps{
-        sh 'mvn clean install'
-        echo "stage success"
+      parallel{
+        stage 1("1st build stage"){
+          steps{
+            sh 'mvn clean install'
+            echo "stahe completed"
+          }
+        }
+        stage 2("2nd build stage"){
+          steps{
+            sh 'mvn clean install'
+            echo "2nd stage build success"
+          }
+        }
       }
     }
     

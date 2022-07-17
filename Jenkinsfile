@@ -49,7 +49,7 @@ pipeline{
     
     stage("Deployment stage"){
       steps{
-        sh 'sudo cp /home/ec2-user/jenkins/workspace/pipeline_Jenkinsfile/target/*.war /opt/apache-tomcat-9.0.64/webapps'
+        sh 'sudo cp /home/ec2-user/jenkins/workspace/pipeline_jenkinsfile/webapp/target/*.war /opt/apache-tomcat-9.0.64/webapps'
         echo "war file deployed"
       }
     }

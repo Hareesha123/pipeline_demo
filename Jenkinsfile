@@ -4,19 +4,19 @@ pipeline{
     stage("Clonnig"){
       steps{
         git 'https://github.com/Hareesha123/pipeline_demo.git'
-        eccho "stage completed"
+        echo "stage completed"
       }
     }
     
     stage("Build stage"){
       parallel{
-        stage 1("1st build stage"){
+        stage("1st build stage"){
           steps{
             sh 'mvn clean install'
-            echo "stahe completed"
+            echo "1st stage completed"
           }
         }
-        stage 2("2nd build stage"){
+        stage("2nd build stage"){
           steps{
             sh 'mvn clean install'
             echo "2nd stage build success"

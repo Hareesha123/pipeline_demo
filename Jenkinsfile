@@ -10,13 +10,13 @@ pipeline{
     
     stage("Build stage"){
       parallel{
-        stage("1st build stage"){
+        stage("stage-1 build"){
           steps{
             sh 'mvn clean install'
             echo "1st stage completed"
           }
         }
-        stage("2nd build stage"){
+        stage("stage-2 build"){
           steps{
             sh 'mvn clean install'
             echo "2nd stage build success"
@@ -33,13 +33,13 @@ pipeline{
     
     stage("Testing"){
       parallel{
-        stage 1("stage-1 testing"){
+        stage("stage-1 testing"){
           steps{
             echo "testing is done"
           }
         }
         
-        stage 2("stage-2 testing"){
+        stage("stage-2 testing"){
           steps{
             echo "testing completed"
           }
